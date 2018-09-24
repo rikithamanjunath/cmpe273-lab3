@@ -23,8 +23,8 @@ class MulticastPingPong(DatagramProtocol):
             self.transport.write(b"Server: Pong", address)
 
 
-# We use listenMultiple=True so that we can run MulticastServer.py and
-# MulticastClient.py on same machine:
+# We use listenMultiple=True so that we can run multicast_udp_server.py and
+# multicast_udp_client.py on same machine:
 reactor.listenMulticast(9999, MulticastPingPong(),
                         listenMultiple=True)
 reactor.run()
